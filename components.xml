@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <Item name="Fission Controller" identifier="fissioncontroller"  category="Electrical"
+        tags="smallitem,circuitboxcomponent" scale="0.4" impactsoundtag="impact_metal_light" isshootable="true">
+        <Sprite texture="%ModDir%/fission.png" sourcerect="0,0,64,64" depth="0.8" origin="0.5,0.5" canflipx="false" />
+        <Fabricate suitableFabricators="fabricator" requiredtime="30">
+            <RequiredSkill identifier="electrical" level="20" />
+            <Item identifier="fpgacircuit" amount="3" />
+        </Fabricate>
+        <Deconstruct requiredtime="30">
+            <Item identifier="fpgacircuit" amount="3" />
+        </Deconstruct>
+        <Body width="100" height="100" density="40" />
+        <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand"
+            msg="ItemMsgDetachWrench" PickingTime="3.0" aimpos="35,-10" handle1="0,0"
+            attachable="true" attachedbydefault="true" aimable="true">
+            <requireditem identifier="wrench" type="Equipped" />
+        </Holdable>
+        <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+            <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center"
+                style="ConnectionPanel" />
+            <AlternativeLayout anchor="CenterRight" />
+            <requireditem items="screwdriver" type="Equipped" />
+            <input name="turbine_speed" displayname="connection.turbine_speed" />
+            <input name="heat_potential" displayname="connection.heatpotential" />
+            <input name="reactor_temperature" displayname="connection.reactor_temperature" />
+            <output name="signal_out" displayname="connection.signalout" />
+        </ConnectionPanel>
+    </Item>
+    <Item name="Turbine Controller" identifier="turbinecontroller"  category="Electrical"
+        tags="smallitem,circuitboxcomponent" scale="0.4" impactsoundtag="impact_metal_light" isshootable="true">
+        <Sprite texture="%ModDir%/turbine.png" sourcerect="0,0,64,64" depth="0.8" origin="0.5,0.5" canflipx="false" />
+        <Fabricate suitableFabricators="fabricator" requiredtime="30">
+            <RequiredSkill identifier="electrical" level="20" />
+            <Item identifier="fpgacircuit" amount="2" />
+        </Fabricate>
+        <Deconstruct requiredtime="30">
+            <Item identifier="fpgacircuit" amount="2" />
+        </Deconstruct>
+        <Body width="100" height="100" density="40" />
+        <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand"
+            msg="ItemMsgDetachWrench" PickingTime="3.0" aimpos="35,-10" handle1="0,0"
+            attachable="true" attachedbydefault="true" aimable="true">
+            <requireditem identifier="wrench" type="Equipped" />
+        </Holdable>
+        <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+            <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center"
+                style="ConnectionPanel" />
+            <AlternativeLayout anchor="CenterRight" />
+            <requireditem items="screwdriver" type="Equipped" />
+            <input name="load" displayname="connection.load" />
+            <input name="max_engine_output" displayname="connection.max_engine_output" />
+            <output name="signal_out" displayname="connection.signalout" />
+        </ConnectionPanel>
+    </Item>
+</Items>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="StroselComponents" corepackage="false" gameversion="0.14.9.1">
+    <Other file="%ModDir%/Lua/Autorun/main.lua" />
+    <Other file="%ModDir%/Lua/Autorun/lib/utils.lua" />
+    <Item file="%ModDir%/components.xml" />
+</contentpackage>
