@@ -2,7 +2,7 @@
 <Items>
     <Item name="Fission Controller" identifier="fissioncontroller"  category="Electrical"
         tags="smallitem,circuitboxcomponent" scale="0.4" impactsoundtag="impact_metal_light" isshootable="true">
-        <Sprite texture="%ModDir%/fission.png" sourcerect="0,0,64,64" depth="0.8" origin="0.5,0.5" canflipx="false" />
+        <Sprite texture="%ModDir%/assets/fission.png" sourcerect="0,0,64,64" depth="0.8" origin="0.5,0.5" canflipx="false" />
         <Fabricate suitableFabricators="fabricator" requiredtime="30">
             <RequiredSkill identifier="electrical" level="20" />
             <Item identifier="fpgacircuit" amount="3" />
@@ -29,7 +29,7 @@
     </Item>
     <Item name="Turbine Controller" identifier="turbinecontroller"  category="Electrical"
         tags="smallitem,circuitboxcomponent" scale="0.4" impactsoundtag="impact_metal_light" isshootable="true">
-        <Sprite texture="%ModDir%/turbine.png" sourcerect="0,0,64,64" depth="0.8" origin="0.5,0.5" canflipx="false" />
+        <Sprite texture="%ModDir%/assets/turbine.png" sourcerect="0,0,64,64" depth="0.8" origin="0.5,0.5" canflipx="false" />
         <Fabricate suitableFabricators="fabricator" requiredtime="30">
             <RequiredSkill identifier="electrical" level="20" />
             <Item identifier="fpgacircuit" amount="2" />
