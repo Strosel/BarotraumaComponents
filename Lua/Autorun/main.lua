@@ -11,10 +11,10 @@ function TurbineController(signal, connection)
     local item = buffer[connection.Item]
 
     if connection.Name == 'load' then
-        item.load = signal.value
+        item.load = tonumber(signal.value)
     end
     if connection.Name == 'max_engine_output' then
-        item.max = signal.value
+        item.max = tonumber(signal.value)
     end
 
     if item.load ~= nil and item.max ~=nil then
@@ -40,13 +40,13 @@ function FissionController(signal, connection)
     local item = buffer[connection.Item]
 
     if connection.Name == 'turbine_speed' then
-        item.turbine = signal.value
+        item.turbine = tonumber(signal.value)
     end
     if connection.Name == 'heat_potential' then
-        item.heat = signal.value
+        item.heat = tonumber(signal.value)
     end
     if connection.Name == 'reactor_temperature' then
-        item.temp = signal.value
+        item.temp = tonumber(signal.value)
     end
 
     if item.turbine ~= nil and item.heat ~= nil and item.temp ~= nil then
