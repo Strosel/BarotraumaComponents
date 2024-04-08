@@ -1,7 +1,7 @@
 local buffer = {}
 
 function TurbineController(signal, connection)
-    if buffer[connection.Item] == nil then 
+    if buffer[connection.Item] == nil then
         buffer[connection.Item] = {
             load=nil,
             max=nil,
@@ -18,7 +18,7 @@ function TurbineController(signal, connection)
     end
 
     if item.load ~= nil and item.max ~=nil then
-        local output = clamp(100*load_value / item.max, 0, 100)
+        local output = clamp(100*item.load / item.max, 0, 100)
 
         connection.Item.SendSignal(tostring(output), 'signal_out')
 
@@ -29,7 +29,7 @@ end
 
 -- NOTE formula from https://steamcommunity.com/sharedfiles/filedetails/?id=2899798076
 function FissionController(signal, connection)
-    if buffer[connection.Item] == nil then 
+    if buffer[connection.Item] == nil then
         buffer[connection.Item] = {
             turbine=nil,
             heat=nil,
